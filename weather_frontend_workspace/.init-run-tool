@@ -1,0 +1,4 @@
+{
+    "command": "PORT=<port> BROWSER=none npm start",
+    "working_directory": "/home/kavia/workspace/code-generation/weathervista-28112-74fa04c4/weather_frontend_workspace/weather_frontend"
+}

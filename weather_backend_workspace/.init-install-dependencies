@@ -1,0 +1,4 @@
+{
+    "command": "source venv/bin/activate && pip install -r requirements.txt",
+    "working_directory": "/home/kavia/workspace/code-generation/weathervista-28112-74fa04c4/weather_backend_workspace/weather_backend"
+}
