@@ -60,3 +60,13 @@ cached modules 1.28 MiB [cached] 46 modules
 runtime modules 27.5 KiB 14 modules
 ./node_modules/css-loader/dist/cjs.js!./src/App.css 41 KiB [built] [code generated]
 webpack 5.99.9 compiled successfully in 91 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.46 MiB
+  asset bundle.js 1.46 MiB [emitted] (name: main)
+  asset main.7857bb656b70c1337fcc.hot-update.js 3.97 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.7857bb656b70c1337fcc.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.46 MiB = bundle.js 1.46 MiB main.7857bb656b70c1337fcc.hot-update.js 3.97 KiB
+cached modules 1.32 MiB [cached] 46 modules
+runtime modules 27.5 KiB 14 modules
+./src/hooks/useWeatherApi.js 2.06 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 82 ms

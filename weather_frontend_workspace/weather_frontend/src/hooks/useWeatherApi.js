@@ -6,6 +6,9 @@ import { useState, useCallback } from "react";
  * Returns state ({current, forecast, loading, errors, city}) and a search function.
  */
 export function useWeatherApi() {
+  // Base URL for backend (update here for all weather API calls)
+  const BASE_URL = "https://vscode-internal-472-qa.qa01.cloud.kavia.ai:3001";
+
   const [current, setCurrent] = useState(undefined);
   const [forecast, setForecast] = useState(undefined);
   const [city, setCity] = useState(undefined);
@@ -34,7 +37,7 @@ export function useWeatherApi() {
     // Fetch current weather
     let cur;
     try {
-      const resp = await fetch(`/weather/current?${params}`);
+      const resp = await fetch(`${BASE_URL}/weather/current?${params}`);
       if (!resp.ok) throw new Error();
       cur = await resp.json();
       setCurrent(cur);
@@ -44,7 +47,7 @@ export function useWeatherApi() {
 
     // Fetch forecast
     try {
-      const resp = await fetch(`/weather/forecast?${params}`);
+      const resp = await fetch(`${BASE_URL}/weather/forecast?${params}`);
       if (!resp.ok) throw new Error();
       const forecastData = await resp.json();
       setForecast(forecastData);
