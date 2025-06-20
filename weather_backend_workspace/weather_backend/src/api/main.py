@@ -24,7 +24,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-OPENWEATHERMAP_API_KEY = os.getenv("OPENWEATHERMAP_API_KEY", "your_api_key_here")  # Replace with environment or .env
+# Set the OpenWeatherMap API key as required for the backend integration.
+OPENWEATHERMAP_API_KEY = "bd5e378503939ddaee76f12ad7a97608"
 CURRENT_WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
 FORECAST_URL = "https://api.openweathermap.org/data/2.5/forecast"
 CACHE_TTL_SECONDS = 300  # Cache results for 5 minutes
