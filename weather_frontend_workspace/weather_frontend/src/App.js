@@ -1,35 +1,41 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Header from "./components/Header";
+import WeatherDisplay from "./components/WeatherDisplay";
+import Forecast from "./components/Forecast";
+import Footer from "./components/Footer";
+import { useWeatherApi } from "./hooks/useWeatherApi";
 
 function App() {
-  return (
-    <div className="app">
-      <nav className="navbar">
-        <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-            <div className="logo">
-              <span className="logo-symbol">*</span> KAVIA AI
-            </div>
-            <button className="btn">Template Button</button>
-          </div>
-        </div>
-      </nav>
+  const {
+    currentWeather,
+    forecast,
+    loading,
+    errors,
+    city,
+    search
+  } = useWeatherApi();
 
-      <main>
+  return (
+    <div className="app" style={{ background: "var(--background)", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+      <Header onSearch={search} />
+
+      <main style={{ flex: "1 0 auto", marginTop: 100, marginBottom: 30 }}>
         <div className="container">
-          <div className="hero">
-            <div className="subtitle">AI Workflow Manager Template</div>
-            
-            <h1 className="title">weather_frontend</h1>
-            
-            <div className="description">
-              Start building your application.
-            </div>
-            
-            <button className="btn btn-large">Button</button>
-          </div>
+          <WeatherDisplay
+            weather={currentWeather}
+            city={city}
+            isLoading={loading}
+            error={errors.current}
+          />
+          <Forecast
+            forecast={forecast}
+            isLoading={loading}
+            error={errors.forecast}
+          />
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
